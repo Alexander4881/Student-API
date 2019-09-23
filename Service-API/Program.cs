@@ -5,7 +5,7 @@ using System.ServiceProcess;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace APIService
+namespace Service_API
 {
     static class Program
     {

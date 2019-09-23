@@ -8,7 +8,7 @@ using System.ServiceProcess;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace APIService
+namespace Service_API
 {
     public partial class Service1 : ServiceBase
     {

@@ -1,4 +1,4 @@
-﻿namespace APIService
+﻿namespace Service_API
 {
     partial class Service1
     {
