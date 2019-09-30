@@ -22,6 +22,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <LangVersion>8.0</LangVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -31,6 +32,7 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <LangVersion>8.0</LangVersion>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -44,6 +46,27 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Data\Class\School.cs" />
+    <Compile Include="Data\Interface\ICompany.cs" />
+    <Compile Include="Data\Interface\ICreateUser.cs" />
+    <Compile Include="Data\Interface\IEducationAgreement.cs" />
+    <Compile Include="Data\Interface\IEducationAgreementCategory.cs" />
+    <Compile Include="Data\Interface\IEducationAgreementOrigin.cs" />
+    <Compile Include="Data\Interface\IEducationAgreementSubType.cs" />
+    <Compile Include="Data\Interface\IEducationAgreementType.cs" />
+    <Compile Include="Data\Interface\IEducationalConnection.cs" />
+    <Compile Include="Data\Interface\ILearingnActivity.cs" />
+    <Compile Include="Data\Interface\ILog.cs" />
+    <Compile Include="Data\Interface\ILogDatabaseUpdate.cs" />
+    <Compile Include="Data\Interface\ISchool.cs" />
+    <Compile Include="Data\Interface\ISchoolAgreement.cs" />
+    <Compile Include="Data\Interface\ISchoolCouse.cs" />
+    <Compile Include="Data\Interface\ISpecialAgreement.cs" />
+    <Compile Include="Data\Interface\ISpecialAgreementList.cs" />
+    <Compile Include="Data\Interface\ISpecialization.cs" />
+    <Compile Include="Data\Interface\IuserInformation.cs" />
+    <Compile Include="Logic\Interface\IDatabase.cs" />
+    <Compile Include="Logic\Interface\IDataInsert.cs" />
     <Compile Include="Service1.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -55,6 +78,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Logic\Class\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
