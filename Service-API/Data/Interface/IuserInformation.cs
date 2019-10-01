@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Service_API.Interfaces
 {
-    interface IuserInformation
+    interface IUserInformation
     {
         bool CreateUserInformation();
     }
