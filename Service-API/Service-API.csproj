@@ -66,6 +66,7 @@
     <Compile Include="Data\Interface\ISpecialAgreementList.cs" />
     <Compile Include="Data\Interface\ISpecialization.cs" />
     <Compile Include="Data\Interface\IuserInformation.cs" />
+    <Compile Include="Logic\CSVConverter.cs" />
     <Compile Include="Logic\Database.cs" />
     <Compile Include="Logic\FileWatcher.cs" />
     <Compile Include="Logic\Interface\IDatabase.cs" />
