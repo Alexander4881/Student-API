@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.ServiceProcess;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace Service_API
@@ -14,12 +15,24 @@ namespace Service_API
         /// </summary>
         static void Main()
         {
+#if DEBUG
+            Service1 myService = new Service1();
+            myService.OnDebug();
+            Thread.Sleep(Timeout.Infinite);
+#else   
             ServiceBase[] ServicesToRun;
             ServicesToRun = new ServiceBase[]
             {
                 new Service1()
             };
-            ServiceBase.Run(ServicesToRun);
+            ServiceBase.Run(ServicesToRun); 
+#endif
+            //ServiceBase[] ServicesToRun;
+            //ServicesToRun = new ServiceBase[]
+            //{
+            //    new Service1()
+            //};
+            //ServiceBase.Run(ServicesToRun);
         }
     }
 }
