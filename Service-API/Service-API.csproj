@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Data\Class\LearningActivity.cs" />
     <Compile Include="Data\Class\School.cs" />
     <Compile Include="Data\Interface\ICompany.cs" />
     <Compile Include="Data\Interface\ICreateUser.cs" />
@@ -64,7 +65,7 @@
     <Compile Include="Data\Interface\ISpecialAgreement.cs" />
     <Compile Include="Data\Interface\ISpecialAgreementList.cs" />
     <Compile Include="Data\Interface\ISpecialization.cs" />
-    <Compile Include="Data\Interface\IuserInformation.cs" />
+    <Compile Include="Data\Interface\IUserInformation.cs" />
     <Compile Include="Logic\Interface\IDatabase.cs" />
     <Compile Include="Logic\Interface\IDataInsert.cs" />
     <Compile Include="Service1.cs">
