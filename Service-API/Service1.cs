@@ -19,6 +19,7 @@ namespace Service_API
 
         protected override void OnStart(string[] args)
         {
+            
         }
 
         protected override void OnStop()
@@ -28,6 +29,7 @@ namespace Service_API
         public void OnDebug()
         {
             OnStart(null);
+            Debug.WriteLine("service is starting");
         }
     }
 }

@@ -37,6 +37,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.DirectoryServices.AccountManagement" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -66,8 +67,13 @@
     <Compile Include="Data\Interface\ISpecialAgreementList.cs" />
     <Compile Include="Data\Interface\ISpecialization.cs" />
     <Compile Include="Data\Interface\IUserInformation.cs" />
+    <Compile Include="Logic\Database.cs" />
+    <Compile Include="Logic\FileWatcher.cs" />
     <Compile Include="Logic\Interface\IDatabase.cs" />
     <Compile Include="Logic\Interface\IDataInsert.cs" />
+    <Compile Include="Logic\Ldap.cs" />
+    <Compile Include="Logic\Log.cs" />
+    <Compile Include="Logic\UserLdapHandeler.cs" />
     <Compile Include="Service1.cs">
       <SubType>Component</SubType>
     </Compile>
