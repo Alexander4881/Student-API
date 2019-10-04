@@ -24,5 +24,10 @@ namespace Service_API
         protected override void OnStop()
         {
         }
+
+        public void OnDebug()
+        {
+            OnStart(null);
+        }
     }
 }
