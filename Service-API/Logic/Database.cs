@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Service_API.Logic
 {
-    class Database
+    class Database : IFullDataCopling
     {
         // attributes
         private Database instance = null;
@@ -28,7 +28,5 @@ namespace Service_API.Logic
 
         // constructor
         private Database(){ }
-
-
     }
 }
