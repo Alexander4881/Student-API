@@ -8,6 +8,6 @@ namespace Service_API.Interfaces
 {
     interface IDataInsert
     {
-        public void InsertData(IList<Object>);
+        public void InsertData(IList<Object> data);
     }
 }
