@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Service_API.Logic
 {
-    class CSVConverter: IFullDataCopling
+    class CSVConverter //: IFullDataCopling
     {
         // attributes
         private Thread CSVConverterThread;

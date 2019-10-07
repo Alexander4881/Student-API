@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Service_API.Logic;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,7 @@ namespace Service_API
         public Service1()
         {
             InitializeComponent();
+            FileWatcher fileWatcher = new FileWatcher();
         }
 
         protected override void OnStart(string[] args)
