@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Service_API.Logic.Interface
+namespace Service_API
 {
     interface IConvert
     {
