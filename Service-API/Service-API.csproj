@@ -47,8 +47,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Data\Class\Education.cs" />
+    <Compile Include="Data\Class\EducationAgreement.cs" />
+    <Compile Include="Data\Class\EducationAgreementSubType.cs" />
     <Compile Include="Data\Class\LearningActivity.cs" />
     <Compile Include="Data\Class\School.cs" />
+    <Compile Include="Data\Class\SpecialAgreement.cs" />
+    <Compile Include="Data\Class\SpecialAgreementList.cs" />
+    <Compile Include="Data\Class\Specialization.cs" />
+    <Compile Include="Data\Class\User.cs" />
     <Compile Include="Data\Interface\ICompany.cs" />
     <Compile Include="Data\Interface\ICreateUser.cs" />
     <Compile Include="Data\Interface\IEducationAgreement.cs" />
@@ -70,6 +77,7 @@
     <Compile Include="Logic\Class\CSVConverter.cs" />
     <Compile Include="Logic\Class\Database.cs" />
     <Compile Include="Logic\Class\FileWatcher.cs" />
+    <Compile Include="Logic\Events\IFileCreated.cs" />
     <Compile Include="Logic\Interface\IDatabase.cs" />
     <Compile Include="Logic\Interface\IDataInsert.cs" />
     <Compile Include="Logic\Interface\ILookupUser.cs" />

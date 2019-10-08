@@ -10,7 +10,6 @@ namespace Service_API.Logic
     class CSVConverter //: IFullDataCopling
     {
         // attributes
-        private Thread CSVConverterThread;
         private string path;
 
         public CSVConverter(string path)
