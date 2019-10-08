@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Service_API.Interfaces;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,14 +7,14 @@ using System.Threading.Tasks;
 
 namespace Service_API.Logic
 {
-    class Database //: IFullDataCopling
+    class Database : IDatabase, IDataInsert// IFullDataCopling
     {
         // attributes
         private Database instance = null;
         private readonly string dbConnectionString;
 
         // properties
-        internal Database Instance
+        public Database Instance
         {
             get
             {
@@ -23,10 +24,23 @@ namespace Service_API.Logic
                 }
                 return instance;
             }
-            private set => instance = value;
+            private set 
+            { 
+                instance = value; 
+            }
         }
 
         // constructor
         private Database(){ }
+
+        public void InsertData(IList<object> data)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void OpenConnection()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

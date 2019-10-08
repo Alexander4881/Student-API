@@ -13,7 +13,6 @@ namespace Service_API
     class CSVConverter: IConvert, IFullDataCopling
     {
         // attributes
-        private Thread CSVConverterThread;
         private string path;
 
         public CSVConverter(string path)
