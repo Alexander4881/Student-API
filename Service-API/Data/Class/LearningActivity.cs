@@ -21,7 +21,7 @@ namespace Service_API.Data.Class
 
         public LearningActivity(uint userId, uint schoolId)
         {
-
+            
         }
 
         public uint UserId

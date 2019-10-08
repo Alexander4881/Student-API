@@ -47,8 +47,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Data\Class\EducationAgreementOrigin.cs" />
     <Compile Include="Data\Class\LearningActivity.cs" />
     <Compile Include="Data\Class\School.cs" />
+    <Compile Include="Data\Class\SchoolAgreement.cs" />
+    <Compile Include="Data\Class\SchoolCourse.cs" />
     <Compile Include="Data\Interface\ICompany.cs" />
     <Compile Include="Data\Interface\ICreateUser.cs" />
     <Compile Include="Data\Interface\IEducationAgreement.cs" />
@@ -57,6 +60,7 @@
     <Compile Include="Data\Interface\IEducationAgreementSubType.cs" />
     <Compile Include="Data\Interface\IEducationAgreementType.cs" />
     <Compile Include="Data\Interface\IEducationalConnection.cs" />
+    <Compile Include="Data\Interface\IFullDataCopling.cs" />
     <Compile Include="Data\Interface\ILearingnActivity.cs" />
     <Compile Include="Data\Interface\ILog.cs" />
     <Compile Include="Data\Interface\ILogDatabaseUpdate.cs" />
