@@ -15,8 +15,10 @@ namespace Service_API
     {
         public Service1()
         {
-            InitializeComponent();
-            FileWatcher fileWatcher = new FileWatcher();
+            //InitializeComponent();
+            //FileWatcher fileWatcher = new FileWatcher();
+            CSVConverter cSVConverter = new CSVConverter((@"C:\Users\user\Downloads\Praktikoversigt-120919-094327.csv"));
+            cSVConverter.Convert();
         }
 
         protected override void OnStart(string[] args)
