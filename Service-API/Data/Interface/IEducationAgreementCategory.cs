@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Service_API.Interfaces
 {
-    interface IEducationAgreementCatagory
+    interface IEducationAgreementCategory
     {
         bool CreateEducationAgreementCatagory();
     }
