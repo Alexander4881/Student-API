@@ -8,7 +8,7 @@ using System.IO;
 
 namespace Service_API.Logic
 {
-    class CSVConverter: IFullDataCopling
+    class CSVConverter//: IFullDataCopling
     {
         // attributes
         private string path;
@@ -31,6 +31,8 @@ namespace Service_API.Logic
                     Console.WriteLine(values);
                 }
             }
+
+            return null;
         }
     }
 }

@@ -8,19 +8,20 @@ using MySql.Data;
 using MySql.Data.MySqlClient;
 using Service_API.Data.Class;
 using Service_API.Logic.Class;
+using System.Diagnostics;
 
 namespace Service_API.Logic
 {
     class Database : IDatabase, IDataInsert//, IFullDataCopling
     {
         // attributes
-        private Database instance = null;
+        private static Database instance = null;
         private readonly string dbConnectionString;
         private MySqlConnection connection = null;
 
         // properties
         public MySqlConnection Connection { get => connection; private set => connection = value; }
-        public Database Instance
+        public static Database Instance
         {
             get
             {
@@ -30,15 +31,15 @@ namespace Service_API.Logic
                 }
                 return instance;
             }
-            private set 
-            { 
-                instance = value; 
+            private set
+            {
+                instance = value;
             }
         }
 
 
         // constructor
-        private Database(){ }
+        private Database() { }
 
         public void InsertData(IList<object> data)
         {
@@ -48,6 +49,14 @@ namespace Service_API.Logic
                 switch (dataObject)
                 {
                     case Education education:
+
+                        OpenConnection();
+
+                        MySqlCommand mySqlCommand = new MySqlCommand("INSERT INTO `studentapi`.`education`(`name`,`version`)" +
+                            "VALUES('" + education.Name + "','" + education.Version + "');", Connection);
+
+
+                        CloseConnection();
 
                         break;
 
@@ -125,6 +134,48 @@ namespace Service_API.Logic
                 LogMessage logMessage = new LogMessage("EXCEPTION cast at Database line 77 \n " + e, Data.Emum.Enums.MessageType.Error);
                 Log.Instance.MessageQueue.Enqueue(logMessage);
             }
+        }
+
+        public void ExecuteNonQuerryCommands(List<MySqlCommand> commands)
+        {
+            try
+            {
+                OpenConnection();
+                // loop throug commands and executes
+                foreach (MySqlCommand command in commands)
+                {
+                    // executes command
+                    command.ExecuteNonQuery();
+                }
+
+                // close connection
+                CloseConnection();
+            }
+            catch (Exception e)
+            {
+                LogMessage logMessage = new LogMessage("EXCEPTION cast at Database line 147 \n " + e, Data.Emum.Enums.MessageType.Error);
+                Log.Instance.MessageQueue.Enqueue(logMessage);
+            }
+        }
+
+        public bool CheckForeignKey(MySqlCommand command)
+        {
+            try
+            {
+                OpenConnection();
+
+                
+
+                CloseConnection();
+            }
+            catch (Exception e)
+            {
+                LogMessage logMessage = new LogMessage("EXCEPTION cast at Database line 61 \n " + e, Data.Emum.Enums.MessageType.Error);
+                Log.Instance.MessageQueue.Enqueue(logMessage);
+                return false;
+            }
+
+            return true;
         }
     }
 }
