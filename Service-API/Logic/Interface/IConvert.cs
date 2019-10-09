@@ -8,6 +8,6 @@ namespace Service_API
 {
     interface IConvert
     {
-
+        List<object> Convert();
     }
 }

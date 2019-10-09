@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using System.IO;
 using System.Diagnostics;
 using Service_API.Data.Interface;
+using Service_API.Data.Class;
 
 namespace Service_API
 {
@@ -75,9 +76,9 @@ namespace Service_API
             }
         }
 
-        public bool CreateCompany()
+        public Company CreateCompany()
         {
-            
+            throw new NotImplementedException();
         }
 
         public bool CreateEducation()
@@ -161,6 +162,11 @@ namespace Service_API
         }
 
         public bool ICreateLog()
+        {
+            throw new NotImplementedException();
+        }
+
+        List<object> IConvert.Convert()
         {
             throw new NotImplementedException();
         }
