@@ -88,6 +88,7 @@
     <Compile Include="Data\Interface\IEducationAgreementSubType.cs" />
     <Compile Include="Data\Interface\IEducationAgreementType.cs" />
     <Compile Include="Data\Interface\IEducationalConnection.cs" />
+    <Compile Include="Data\Interface\IFullDataCopling.cs" />
     <Compile Include="Data\Interface\ILearingnActivity.cs" />
     <Compile Include="Data\Interface\ILog.cs" />
     <Compile Include="Data\Interface\ILogDatabaseUpdate.cs" />
