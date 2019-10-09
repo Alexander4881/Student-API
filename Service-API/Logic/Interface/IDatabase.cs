@@ -9,5 +9,6 @@ namespace Service_API.Interfaces
     interface IDatabase
     {
         public void OpenConnection();
+        public void CloseConnection();
     }
 }
