@@ -12,6 +12,21 @@
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -67,44 +82,52 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Data\Class\Company.cs" />
     <Compile Include="Data\Class\Education.cs" />
     <Compile Include="Data\Class\EducationAgreement.cs" />
+    <Compile Include="Data\Class\EducationAgreementCategory.cs" />
+    <Compile Include="Data\Class\EducationAgreementOrigin.cs" />
     <Compile Include="Data\Class\EducationAgreementSubType.cs" />
+    <Compile Include="Data\Class\EducationAgreementType.cs" />
     <Compile Include="Data\Class\EducationalConnection.cs" />
     <Compile Include="Data\Class\LearningActivity.cs" />
     <Compile Include="Data\Class\LogMessage.cs" />
     <Compile Include="Data\Class\School.cs" />
+    <Compile Include="Data\Class\SchoolAgreement.cs" />
+    <Compile Include="Data\Class\SchoolCourse.cs" />
     <Compile Include="Data\Class\SpecialAgreement.cs" />
     <Compile Include="Data\Class\SpecialAgreementList.cs" />
     <Compile Include="Data\Class\Specialization.cs" />
     <Compile Include="Data\Class\User.cs" />
     <Compile Include="Data\Class\UserInformation.cs" />
+    <Compile Include="Data\DatabaseInterfaces\ICompany.cs" />
+    <Compile Include="Data\DatabaseInterfaces\ICreateUser.cs" />
+    <Compile Include="Data\DatabaseInterfaces\IEducationAgreement.cs" />
+    <Compile Include="Data\DatabaseInterfaces\IEducationAgreementCategory.cs" />
+    <Compile Include="Data\DatabaseInterfaces\IEducationAgreementOrigin.cs" />
+    <Compile Include="Data\DatabaseInterfaces\IEducationAgreementSubType.cs" />
+    <Compile Include="Data\DatabaseInterfaces\IEducationAgreementType.cs" />
+    <Compile Include="Data\DatabaseInterfaces\IEducationalConnection.cs" />
+    <Compile Include="Data\DatabaseInterfaces\IFullDataCopling.cs" />
+    <Compile Include="Data\DatabaseInterfaces\ILearingnActivity.cs" />
+    <Compile Include="Data\DatabaseInterfaces\ILog.cs" />
+    <Compile Include="Data\DatabaseInterfaces\ILogDatabaseUpdate.cs" />
+    <Compile Include="Data\DatabaseInterfaces\ISchool.cs" />
+    <Compile Include="Data\DatabaseInterfaces\ISchoolAgreement.cs" />
+    <Compile Include="Data\DatabaseInterfaces\ISchoolCouse.cs" />
+    <Compile Include="Data\DatabaseInterfaces\ISpecialAgreement.cs" />
+    <Compile Include="Data\DatabaseInterfaces\ISpecialAgreementList.cs" />
+    <Compile Include="Data\DatabaseInterfaces\ISpecialization.cs" />
+    <Compile Include="Data\DatabaseInterfaces\IUserInformation.cs" />
     <Compile Include="Data\Emum\Enums.cs" />
-    <Compile Include="Data\Interface\ICompany.cs" />
-    <Compile Include="Data\Interface\ICreateUser.cs" />
-    <Compile Include="Data\Interface\IEducationAgreement.cs" />
-    <Compile Include="Data\Interface\IEducationAgreementCategory.cs" />
-    <Compile Include="Data\Interface\IEducationAgreementOrigin.cs" />
-    <Compile Include="Data\Interface\IEducationAgreementSubType.cs" />
-    <Compile Include="Data\Interface\IEducationAgreementType.cs" />
-    <Compile Include="Data\Interface\IEducationalConnection.cs" />
-    <Compile Include="Data\Interface\IFullDataCopling.cs" />
-    <Compile Include="Data\Interface\ILearingnActivity.cs" />
-    <Compile Include="Data\Interface\ILog.cs" />
-    <Compile Include="Data\Interface\ILogDatabaseUpdate.cs" />
-    <Compile Include="Data\Interface\ISchool.cs" />
-    <Compile Include="Data\Interface\ISchoolAgreement.cs" />
-    <Compile Include="Data\Interface\ISchoolCouse.cs" />
-    <Compile Include="Data\Interface\ISpecialAgreement.cs" />
-    <Compile Include="Data\Interface\ISpecialAgreementList.cs" />
-    <Compile Include="Data\Interface\ISpecialization.cs" />
-    <Compile Include="Data\Interface\IUserInformation.cs" />
     <Compile Include="Logic\Class\CSVConverter.cs" />
+    <Compile Include="Logic\Class\CSVData.cs" />
     <Compile Include="Logic\Class\Database.cs" />
     <Compile Include="Logic\Class\FileWatcher.cs" />
     <Compile Include="Logic\Events\IFileCreated.cs" />
-    <Compile Include="Logic\Interface\IDatabase.cs" />
-    <Compile Include="Logic\Interface\IDataInsert.cs" />
+    <Compile Include="Data\DatabaseInterfaces\IDatabase.cs" />
+    <Compile Include="Data\DatabaseInterfaces\IDataInsert.cs" />
+    <Compile Include="Logic\Interface\IConvert.cs" />
     <Compile Include="Logic\Interface\ILookupUser.cs" />
     <Compile Include="Logic\Class\Ldap.cs" />
     <Compile Include="Logic\Class\Log.cs" />
@@ -122,6 +145,17 @@
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.8">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.8 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
