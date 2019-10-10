@@ -31,12 +31,18 @@ namespace Service_API
                     // the data object we will retune
                     List<object> dataObjectsList = new List<object>();
 
+                    // read the first line from the csv
+                    reader.ReadLine();
+
                     while (!reader.EndOfStream)
                     {
-                        // read the first line
-                        reader.ReadLine();
+                        // get a new line from the csv
                         string csvLine = reader.ReadLine();
+                        // get the csv data from the new line
                         string[] csvData = csvLine.Split('	');
+
+                        // convert to a data object
+                        ConvertCSVDataToObj(csvData);
                     }
                 }
             }
@@ -53,11 +59,45 @@ namespace Service_API
         /// </summary>
         /// <param name="csvData"> the csv data </param>
         /// <returns> CSVData Object </returns>
-        private CSVData ConvertCSVDataToObj(string[] csvData)
+        private List<object> ConvertCSVDataToObj(string[] csvData)
         {
+            List<object> returneList = new List<object>();
 
+            switch (csvData[10])
+            {
+                case "Skoleaftale":
+
+                    break;
+
+                case "Uddannelsesaftale":
+                    // create user
+                    User user = new User(csvData[5],csvData[6],);
+                    returneList.Add(new User);
+
+                    // create school Agreeement
+
+                    // create School
+                    break;
+
+                case "Skolepraktik":
+
+                    break;
+
+                case "Skoleforløb":
+
+                    break;
+            }
 
             return null;
+        }
+
+        private DataTime GetDataTime(string dateDanishFormat)
+        {
+
+            byte day = byte.Parse(dateDanishFormat.Substring(0, 1));
+            byte month = byte.Parse(dateDanishFormat.Substring(2, 3));
+            byte year = byte.Parse();
+            return new DateTime(year, month, day);
         }
     }
 }
