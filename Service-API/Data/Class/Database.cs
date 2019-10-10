@@ -9,14 +9,15 @@ using MySql.Data.MySqlClient;
 using Service_API.Data.Class;
 using Service_API.Logic.Class;
 using System.Diagnostics;
+using Service_API.Logic;
+using System.Configuration;
 
-namespace Service_API.Logic
+namespace Service_API.Data
 {
     class Database : IDatabase, IDataInsert//, IFullDataCopling
     {
         // attributes
         private static Database instance = null;
-        private readonly string dbConnectionString;
         private MySqlConnection connection = null;
 
         // properties
@@ -46,6 +47,9 @@ namespace Service_API.Logic
             // TODO: make a switch on type 
             foreach (object dataObject in data)
             {
+
+
+
                 switch (dataObject)
                 {
                     case Education education:
@@ -108,7 +112,7 @@ namespace Service_API.Logic
             {
                 if (Connection == null)
                 {
-                    string connstring = string.Format("Server=localhost; database=StudentAPI; UID=root; password=");
+                    string connstring = ConfigurationManager.ConnectionStrings["XAMPP"]?.ConnectionString;
                     Connection = new MySqlConnection(connstring);
                     Connection.Open();
                 }

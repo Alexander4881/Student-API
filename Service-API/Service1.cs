@@ -1,4 +1,5 @@
 ﻿using Service_API.Logic;
+using Service_API.Logic.Class;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -17,13 +18,16 @@ namespace Service_API
         {
             //InitializeComponent();
             //FileWatcher fileWatcher = new FileWatcher();
-            CSVConverter cSVConverter = new CSVConverter((@"C:\Users\user\Downloads\Praktikoversigt-120919-094327.csv"));
-            cSVConverter.Convert();
+            //CSVConverter cSVConverter = new CSVConverter((@"C:\Users\user\Downloads\Praktikoversigt-120919-094327.csv"));
+            //cSVConverter.Convert();
+            //LdapService ldapService = new LdapService();
+            //var userInfo = ldapService.LdapGetCommonName($"Tobias Rosenvinge", $"Hammer");
+            //Debug.WriteLine(userInfo);
         }
 
         protected override void OnStart(string[] args)
         {
-            
+
         }
 
         protected override void OnStop()

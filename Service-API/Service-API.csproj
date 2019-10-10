@@ -90,6 +90,7 @@
     <Compile Include="Data\Class\EducationAgreementSubType.cs" />
     <Compile Include="Data\Class\EducationAgreementType.cs" />
     <Compile Include="Data\Class\EducationalConnection.cs" />
+    <Compile Include="Data\Class\Ldap.cs" />
     <Compile Include="Data\Class\LearningActivity.cs" />
     <Compile Include="Data\Class\LogMessage.cs" />
     <Compile Include="Data\Class\School.cs" />
@@ -122,14 +123,14 @@
     <Compile Include="Data\Emum\Enums.cs" />
     <Compile Include="Logic\Class\CSVConverter.cs" />
     <Compile Include="Logic\Class\CSVData.cs" />
-    <Compile Include="Logic\Class\Database.cs" />
+    <Compile Include="Data\Class\Database.cs" />
     <Compile Include="Logic\Class\FileWatcher.cs" />
+    <Compile Include="Logic\Class\LdapService.cs" />
     <Compile Include="Logic\Events\IFileCreated.cs" />
     <Compile Include="Data\DatabaseInterfaces\IDatabase.cs" />
     <Compile Include="Data\DatabaseInterfaces\IDataInsert.cs" />
     <Compile Include="Logic\Interface\IConvert.cs" />
     <Compile Include="Logic\Interface\ILookupUser.cs" />
-    <Compile Include="Logic\Class\Ldap.cs" />
     <Compile Include="Logic\Class\Log.cs" />
     <Compile Include="Logic\Class\UserLdapHandeler.cs" />
     <Compile Include="Service1.cs">
