@@ -71,8 +71,9 @@ namespace Service_API
 
                 case "Uddannelsesaftale":
                     // create user
-                    User user = new User(csvData[5],csvData[6],);
-                    returneList.Add(new User);
+                    //User user = new User(csvData[5], csvData[6],);
+                    //returneList.Add(new User);
+                    Debug.WriteLine(GetDataTime("101010"));
 
                     // create school Agreeement
 
@@ -91,12 +92,23 @@ namespace Service_API
             return null;
         }
 
-        private DataTime GetDataTime(string dateDanishFormat)
+        private DateTime GetDataTime(string dateDanishFormat)
         {
 
-            byte day = byte.Parse(dateDanishFormat.Substring(0, 1));
-            byte month = byte.Parse(dateDanishFormat.Substring(2, 3));
-            byte year = byte.Parse();
+            byte day = byte.Parse(dateDanishFormat.Substring(0, 2));
+            byte month = byte.Parse(dateDanishFormat.Substring(3, 2));
+            int year = int.Parse(dateDanishFormat.Substring(5, 2));
+
+
+            if (year <= 50)
+            {
+                year = 1900 + year;
+            }
+            else
+            {
+                year = 2000 + year;
+            }
+
             return new DateTime(year, month, day);
         }
     }
